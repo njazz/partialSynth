@@ -99,9 +99,7 @@ public:
     void process(const float* in_buffer, float* out_buffer, size_t s)
     {
 
-        //        for (int i = 0; i < s; i++)
-        //            out_buffer[i] = 0.;
-
+        
         float* buf = new float[s];
         for (int i = 0; i < s; i++) {
             buf[i] = in_buffer[i];
@@ -113,8 +111,6 @@ public:
 
         delete[] buf;
 
-        //        for (int i=0;i<1024;i++)
-        //            partials[i].process(s,buffer);
     };
 };
 

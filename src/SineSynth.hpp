@@ -100,9 +100,6 @@ public:
 
         for (SinePartial* sp : activePartials())
             sp->process(s, buffer);
-
-        //        for (int i=0;i<1024;i++)
-        //            partials[i].process(s,buffer);
     };
 };
 

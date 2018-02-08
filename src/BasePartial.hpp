@@ -11,39 +11,7 @@
 
 #include <stdio.h>
 
-class PartialParameter {
-    float _value = 0;
-    float _previous = 0;
-    float _smooth = 0.98;
-    float _nsmooth = .02;
-
-public:
-    inline void process()
-    {
-        _previous = _previous * _smooth + _value * _nsmooth;
-    }
-
-    inline void process(size_t s)
-    {
-        while (s--) {
-            process();
-        }
-    }
-
-    void setValue(float v)
-    {
-        _value = v;
-        process();
-    }
-    float value() { return _previous; }
-
-    void setSmooth(float v)
-    {
-        _smooth = v;
-        _nsmooth = 1 - v;
-    }
-    float smooth() { return _smooth; }
-};
+#include "PartialParameter.hpp"
 
 class BasePartial {
 protected:
@@ -63,6 +31,7 @@ public:
     void process(size_t s) {}
     
     template <int I>
+    inline
     void set(float f)
     {
         par<I>().setValue(f);
@@ -70,6 +39,8 @@ public:
 
     bool busy() { return _busy; }
     void setBusy(bool b) { _busy = b; }
+    
+    void setSampleRate(float sr){_sampleRate = sr;}
 };
 
 #endif /* BasePartial_hpp */

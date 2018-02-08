@@ -22,6 +22,7 @@
 		31A0D3E22027377900809B3E /* BasePartial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 317ECA492027264800B21C82 /* BasePartial.cpp */; };
 		31A0D3E32027377900809B3E /* SinePartial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 317ECA4D202726B700B21C82 /* SinePartial.cpp */; };
 		31A0D3E42027377900809B3E /* SineSynth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 317ECA5120272C7D00B21C82 /* SineSynth.cpp */; };
+		31FC2563202C6A0900E1B64E /* PartialParameter.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 31FC2561202C6A0900E1B64E /* PartialParameter.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		31A0D3DA202736FF00809B3E /* PartialSynthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PartialSynthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A0D3DC202736FF00809B3E /* PartialSynthTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PartialSynthTests.mm; sourceTree = "<group>"; };
 		31A0D3DE202736FF00809B3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31FC2561202C6A0900E1B64E /* PartialParameter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PartialParameter.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 		317ECA482027262600B21C82 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				31FC2561202C6A0900E1B64E /* PartialParameter.hpp */,
 				317ECA492027264800B21C82 /* BasePartial.cpp */,
 				317ECA4A2027264800B21C82 /* BasePartial.hpp */,
 				317ECA4D202726B700B21C82 /* SinePartial.cpp */,
@@ -128,6 +131,7 @@
 				317ECA4C2027264800B21C82 /* BasePartial.hpp in Headers */,
 				316F546120276EC800E2B12C /* ResPartial.hpp in Headers */,
 				317ECA50202726B700B21C82 /* SinePartial.hpp in Headers */,
+				31FC2563202C6A0900E1B64E /* PartialParameter.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,15 +27,16 @@ private:
     float fConst0 = (6.2831855f / fmin(1.92e+05f, fmax(1.0f, (float)fSamplingFreq)));
 
 
-    inline void compute(const float** input, float** output) //int count,
+    inline
+    void compute(const float** input, float** output) //int count,
     {
         float input0 = par<pFreq>().value(); //input[0];
         float input1 = par<pDecay>().value(); //input[1];
         float input2 = par<pGain>().value(); //input[2];
-        //float f = float(rand()%1000)/1000.;
+        
         const float* input3 = input[0];
         float* output0 = output[0];
-        //for (int i = 0; i < count; i++)
+        
         {
             float fTemp0 = input1;
             float fTemp1 = (fConst0 * (float)input0);
@@ -76,7 +77,6 @@ public:
             par<pDecay>().process();
             par<pGain>().process();
 
-            //*b += sinOsc(par<pFreq>().value()) * par<pAmp>().value();
             compute(&b_in, &b_out);
             b_in++;
             b_out++;
