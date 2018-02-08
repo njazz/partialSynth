@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		316F546020276EC800E2B12C /* ResPartial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 316F545E20276EC800E2B12C /* ResPartial.cpp */; };
+		316F546120276EC800E2B12C /* ResPartial.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 316F545F20276EC800E2B12C /* ResPartial.hpp */; };
+		316F54642027736000E2B12C /* ResSynth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 316F54622027736000E2B12C /* ResSynth.cpp */; };
+		316F54652027736000E2B12C /* ResSynth.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 316F54632027736000E2B12C /* ResSynth.hpp */; };
 		317ECA422027261D00B21C82 /* PartialSynth.h in Headers */ = {isa = PBXBuildFile; fileRef = 317ECA402027261D00B21C82 /* PartialSynth.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		317ECA4B2027264800B21C82 /* BasePartial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 317ECA492027264800B21C82 /* BasePartial.cpp */; };
 		317ECA4C2027264800B21C82 /* BasePartial.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 317ECA4A2027264800B21C82 /* BasePartial.hpp */; };
@@ -21,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		316F545E20276EC800E2B12C /* ResPartial.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ResPartial.cpp; sourceTree = "<group>"; };
+		316F545F20276EC800E2B12C /* ResPartial.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ResPartial.hpp; sourceTree = "<group>"; };
+		316F54622027736000E2B12C /* ResSynth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResSynth.cpp; sourceTree = "<group>"; };
+		316F54632027736000E2B12C /* ResSynth.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ResSynth.hpp; sourceTree = "<group>"; };
 		317ECA3D2027261D00B21C82 /* PartialSynth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PartialSynth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		317ECA402027261D00B21C82 /* PartialSynth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PartialSynth.h; sourceTree = "<group>"; };
 		317ECA412027261D00B21C82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,8 +96,12 @@
 				317ECA4A2027264800B21C82 /* BasePartial.hpp */,
 				317ECA4D202726B700B21C82 /* SinePartial.cpp */,
 				317ECA4E202726B700B21C82 /* SinePartial.hpp */,
+				316F545E20276EC800E2B12C /* ResPartial.cpp */,
+				316F545F20276EC800E2B12C /* ResPartial.hpp */,
 				317ECA5120272C7D00B21C82 /* SineSynth.cpp */,
 				317ECA5220272C7D00B21C82 /* SineSynth.hpp */,
+				316F54622027736000E2B12C /* ResSynth.cpp */,
+				316F54632027736000E2B12C /* ResSynth.hpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -110,9 +122,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				316F54652027736000E2B12C /* ResSynth.hpp in Headers */,
 				317ECA5420272C7D00B21C82 /* SineSynth.hpp in Headers */,
 				317ECA422027261D00B21C82 /* PartialSynth.h in Headers */,
 				317ECA4C2027264800B21C82 /* BasePartial.hpp in Headers */,
+				316F546120276EC800E2B12C /* ResPartial.hpp in Headers */,
 				317ECA50202726B700B21C82 /* SinePartial.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,6 +230,8 @@
 			files = (
 				317ECA4F202726B700B21C82 /* SinePartial.cpp in Sources */,
 				317ECA5320272C7D00B21C82 /* SineSynth.cpp in Sources */,
+				316F546020276EC800E2B12C /* ResPartial.cpp in Sources */,
+				316F54642027736000E2B12C /* ResSynth.cpp in Sources */,
 				317ECA4B2027264800B21C82 /* BasePartial.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

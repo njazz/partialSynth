@@ -21,7 +21,6 @@ public:
     inline void process()
     {
         _previous = _previous * _smooth + _value * _nsmooth;
-
     }
 
     inline void process(size_t s)
@@ -31,7 +30,11 @@ public:
         }
     }
 
-    void setValue(float v) { _value = v; process();}
+    void setValue(float v)
+    {
+        _value = v;
+        process();
+    }
     float value() { return _previous; }
 
     void setSmooth(float v)
@@ -45,12 +48,28 @@ public:
 class BasePartial {
 protected:
     bool _busy = false;
+    float _sampleRate = 44100;
+    
+    PartialParameter _param[3];
+    
+    template<int I>
+    inline
+    PartialParameter& par()
+    {
+        return _param[I];
+    };
 
 public:
     void process(size_t s) {}
+    
+    template <int I>
+    void set(float f)
+    {
+        par<I>().setValue(f);
+    };
 
     bool busy() { return _busy; }
-    void setBusy(bool b) {_busy = b;}
+    void setBusy(bool b) { _busy = b; }
 };
 
 #endif /* BasePartial_hpp */

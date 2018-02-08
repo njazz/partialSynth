@@ -20,34 +20,24 @@
 //float fastSinOsc(float f);
 
 class SinePartial : public BasePartial {
-    
-    unsigned long _counter = 0;
-    float _sampleRate = 44100;
 
-    PartialParameter _param[2];
-    
-    template<int I>
-    inline
-    PartialParameter& par()
-    {
-        return _param[I];
-    };
+    unsigned long _counter = 0;
 
     //inline
     float sinOsc(float f)
     {
-        float ret = sinf(float(_counter)/(_sampleRate/f)*3.1415*2);
-        _counter ++;
+        float ret = sinf(float(_counter) / (_sampleRate / f) * 3.1415 * 2);
+        _counter++;
 
         return ret;
-
     }
-    
+
 public:
     SinePartial()
     {
         par<pFreq>().setSmooth(0);
     }
+
     void process(size_t s, float* buffer)
     {
         float* b = buffer;
@@ -55,28 +45,16 @@ public:
             par<pFreq>().process();
             par<pAmp>().process();
 
-//            if (par<pAmp>().value()<0.000001)
-//            {
-//                continue;
-//            }
-            
             *b += sinOsc(par<pFreq>().value()) * par<pAmp>().value();
             b++;
 
-            if (par<pAmp>().value()<0.000001)
+            if (par<pAmp>().value() < 0.000001)
                 _busy = false;
         }
     }
-    
-    template<int I>
-    void set(float f)
-    {
-        par<I>().setValue(f);
-    };
-    
+
     static const int pFreq = 0;
     static const int pAmp = 1;
-    
 };
 
 #endif /* SinePartial_hpp */
