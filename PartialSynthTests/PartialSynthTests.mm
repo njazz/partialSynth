@@ -17,29 +17,27 @@
 
 @implementation PartialSynthTests
 
--(void)testBasic
+- (void)testBasic
 {
     SinePartial sp;
-    
+
     sp.set<SinePartial::pAmp>(0.5);
     sp.set<SinePartial::pFreq>(440);
-    
-    float* b = new float[512];
-    
-    sp.process(512, b);
-    
 
-    
+    float* b = new float[512];
+
+    sp.process(512, b);
+
     SineSynth s;
-    
+
     SinePartialData d(1);
     d.amp[0] = 0.5;
     d.freq[0] = 440;
-    
+
     s.setData(d);
     s.process(b, 512);
-    
-        delete[] b;
+
+    delete[] b;
 }
 
 @end
