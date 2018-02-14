@@ -19,18 +19,29 @@ typedef struct SinePartialData {
     float* amp = 0;
     size_t size = 0;
 
-    SinePartialData(size_t s)
+    explicit SinePartialData(size_t s)
     {
         freq = new float[s];
         amp = new float[s];
         size = s;
     }
+    SinePartialData(SinePartialData& d)
+    {
+        freq = new float[d.size];
+        amp = new float[d.size];
+        size = d.size;
+
+        memcpy(freq, d.freq, size);
+        memcpy(amp, d.amp, size);
+
+    }
+
     ~SinePartialData()
     {
-        //        if (freq)
-        //            delete[] freq;
-        //        if (amp)
-        //            delete[] amp;
+        if (freq)
+            delete[] freq;
+        if (amp)
+            delete[] amp;
     }
 
 } SinePartialData;

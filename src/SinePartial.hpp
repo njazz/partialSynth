@@ -9,15 +9,11 @@
 #ifndef SinePartial_hpp
 #define SinePartial_hpp
 
-#include <stdio.h>
-
 #include "BasePartial.hpp"
-
 #include "math.h"
-
+#include <cmath>
+#include <stdio.h>
 #include <stdlib.h>
-
-//float fastSinOsc(float f);
 
 class SinePartial : public BasePartial {
 
@@ -27,6 +23,7 @@ class SinePartial : public BasePartial {
     float sinOsc(float f)
     {
         float ret = sinf(float(_counter) / (_sampleRate / f) * 3.1415 * 2);
+
         _counter++;
 
         return ret;

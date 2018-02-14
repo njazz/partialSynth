@@ -14,8 +14,8 @@
 class PartialParameter {
     float _value = 0;
     float _previous = 0;
-    float _smooth = 0.98;
-    float _nsmooth = .02;
+    float _smooth = 0.99;
+    float _nsmooth = .01;
 
 public:
     inline

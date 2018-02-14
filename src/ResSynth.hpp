@@ -6,8 +6,8 @@
 //  Copyright © 2018 Alex Nadzharov. All rights reserved.
 //
 
-#ifndef SineSynth_hpp
-#define SineSynth_hpp
+#ifndef ResSynth_hpp
+#define ResSynth_hpp
 
 #include <stdio.h>
 
@@ -20,7 +20,7 @@ typedef struct ResPartialData {
     float* gain = 0;
     size_t size = 0;
 
-    ResPartialData(size_t s)
+    explicit ResPartialData(size_t s)
     {
         freq = new float[s];
         decay = new float[s];
@@ -29,10 +29,24 @@ typedef struct ResPartialData {
     }
     ~ResPartialData()
     {
-        //        if (freq)
-        //            delete[] freq;
-        //        if (amp)
-        //            delete[] amp;
+                if (freq)
+                    delete[] freq;
+                if (decay)
+                    delete[] decay;
+                if (gain)
+                    delete[] gain;
+    }
+
+    ResPartialData(ResPartialData& d)
+    {
+        freq = new float[d.size];
+        decay = new float[d.size];
+        gain = new float[d.size];
+        size = d.size;
+
+        memcpy(freq, d.freq, size);
+        memcpy(decay, d.decay, size);
+        memcpy(gain, d.gain, size);
     }
 
 } ResPartialData;
@@ -99,7 +113,6 @@ public:
     void process(const float* in_buffer, float* out_buffer, size_t s)
     {
 
-        
         float* buf = new float[s];
         for (int i = 0; i < s; i++) {
             buf[i] = in_buffer[i];
@@ -110,7 +123,6 @@ public:
             sp->process(s, buf, out_buffer);
 
         delete[] buf;
-
     };
 };
 

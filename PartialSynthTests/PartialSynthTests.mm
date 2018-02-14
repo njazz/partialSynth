@@ -10,6 +10,8 @@
 
 #import "SinePartial.hpp"
 #import "SineSynth.hpp"
+#import "ResPartial.hpp"
+#import "ResSynth.hpp"
 
 @interface PartialSynthTests : XCTestCase
 
@@ -38,6 +40,28 @@
     s.process(b, 512);
 
     delete[] b;
+
+    ResPartial rp;
+
+    rp.set<ResPartial::pGain>(0.5);
+    rp.set<ResPartial::pFreq>(440);
+
+    b = new float[512];
+    float* bi = new float[512];
+    sp.process(512, b);
+
+    ResSynth r;
+
+    ResPartialData rd(1);
+    rd.gain[0] = 0.5;
+    rd.freq[0] = 440;
+
+    r.setData(rd);
+    r.process(bi, b, 512);
+
+    delete[] b;
 }
 
 @end
+
+
