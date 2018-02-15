@@ -14,6 +14,8 @@
 #include "SinePartial.hpp"
 #include <vector>
 
+static const int maxNumberOfPartials = 4096;
+
 typedef struct SinePartialData {
     float* freq = 0;
     float* amp = 0;
@@ -52,7 +54,7 @@ class SineSynth {
     const std::vector<int> freePartialIndices()
     {
         std::vector<int> ret;
-        for (int i = 0; i < 1024; i++) {
+        for (int i = 0; i < maxNumberOfPartials; i++) {
             if (!partials[i]->busy())
                 ret.push_back(i);
         }
@@ -62,7 +64,7 @@ class SineSynth {
     const std::vector<SinePartial*> activePartials()
     {
         std::vector<SinePartial*> ret;
-        for (int i = 0; i < 1024; i++) {
+        for (int i = 0; i < maxNumberOfPartials; i++) {
             if (partials[i]->busy())
                 ret.push_back(partials[i]);
         }
@@ -72,10 +74,10 @@ class SineSynth {
 public:
     SineSynth()
     {
-        for (int i = 0; i < 1024; i++)
+        for (int i = 0; i < maxNumberOfPartials; i++)
             partials.push_back(new SinePartial);
     }
-    void setData(SinePartialData data)
+    void setData(SinePartialData& data)
     {
         muteActivePartials();
 
@@ -96,7 +98,7 @@ public:
 
     void muteActivePartials()
     {
-        for (int i = 0; i < 1024; i++) {
+        for (int i = 0; i < maxNumberOfPartials; i++) {
             if (partials[i]->busy()) {
                 partials[i]->set<SinePartial::pAmp>(0);
             }

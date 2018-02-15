@@ -14,6 +14,8 @@
 #include "ResPartial.hpp"
 #include <vector>
 
+static const int maxNumberOfPartials = 4096;
+
 typedef struct ResPartialData {
     float* freq = 0;
     float* decay = 0;
@@ -57,7 +59,7 @@ class ResSynth {
     const std::vector<int> freePartialIndices()
     {
         std::vector<int> ret;
-        for (int i = 0; i < 1024; i++) {
+        for (int i = 0; i < maxNumberOfPartials; i++) {
             if (!partials[i]->busy())
                 ret.push_back(i);
         }
@@ -67,7 +69,7 @@ class ResSynth {
     const std::vector<ResPartial*> activePartials()
     {
         std::vector<ResPartial*> ret;
-        for (int i = 0; i < 1024; i++) {
+        for (int i = 0; i < maxNumberOfPartials; i++) {
             if (partials[i]->busy())
                 ret.push_back(partials[i]);
         }
@@ -77,11 +79,11 @@ class ResSynth {
 public:
     ResSynth()
     {
-        for (int i = 0; i < 1024; i++)
+        for (int i = 0; i < maxNumberOfPartials; i++)
             partials.push_back(new ResPartial);
     }
 
-    void setData(ResPartialData data)
+    void setData(ResPartialData& data)
     {
         muteActivePartials();
 
@@ -92,7 +94,7 @@ public:
 
         for (int i = 0; i < s; i++) {
             int idx = freeIdx[i];
-            if (idx > 1024)
+            if (idx > maxNumberOfPartials)
                 continue;
             partials[idx]->set<ResPartial::pGain>(data.gain[i]);
             partials[idx]->set<ResPartial::pDecay>(data.decay[i]);
@@ -103,7 +105,7 @@ public:
 
     void muteActivePartials()
     {
-        for (int i = 0; i < 1024; i++) {
+        for (int i = 0; i < maxNumberOfPartials; i++) {
             if (partials[i]->busy()) {
                 partials[i]->set<ResPartial::pGain>(0);
             }
