@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3160BE4B2051F6CA0024A591 /* PartialSynth_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 3160BE492051F6CA0024A591 /* PartialSynth_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3160BE4F2051F6D30024A591 /* BasePartial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 317ECA492027264800B21C82 /* BasePartial.cpp */; };
+		3160BE502051F6D30024A591 /* SinePartial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 317ECA4D202726B700B21C82 /* SinePartial.cpp */; };
+		3160BE512051F6D30024A591 /* ResPartial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 316F545E20276EC800E2B12C /* ResPartial.cpp */; };
+		3160BE522051F6D30024A591 /* SineSynth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 317ECA5120272C7D00B21C82 /* SineSynth.cpp */; };
+		3160BE532051F6D30024A591 /* ResSynth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 316F54622027736000E2B12C /* ResSynth.cpp */; };
+		3160BE542051F6D80024A591 /* PartialParameter.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 31FC2561202C6A0900E1B64E /* PartialParameter.hpp */; };
+		3160BE552051F6D80024A591 /* BasePartial.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 317ECA4A2027264800B21C82 /* BasePartial.hpp */; };
+		3160BE562051F6D80024A591 /* SinePartial.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 317ECA4E202726B700B21C82 /* SinePartial.hpp */; };
+		3160BE572051F6D80024A591 /* ResPartial.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 316F545F20276EC800E2B12C /* ResPartial.hpp */; };
+		3160BE582051F6D80024A591 /* SineSynth.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 317ECA5220272C7D00B21C82 /* SineSynth.hpp */; };
+		3160BE592051F6D80024A591 /* ResSynth.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 316F54632027736000E2B12C /* ResSynth.hpp */; };
 		316F546020276EC800E2B12C /* ResPartial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 316F545E20276EC800E2B12C /* ResPartial.cpp */; };
 		316F546120276EC800E2B12C /* ResPartial.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 316F545F20276EC800E2B12C /* ResPartial.hpp */; };
 		316F54642027736000E2B12C /* ResSynth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 316F54622027736000E2B12C /* ResSynth.cpp */; };
@@ -26,6 +38,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3160BE472051F6CA0024A591 /* PartialSynth_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PartialSynth_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3160BE492051F6CA0024A591 /* PartialSynth_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PartialSynth_iOS.h; sourceTree = "<group>"; };
+		3160BE4A2051F6CA0024A591 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		316F545E20276EC800E2B12C /* ResPartial.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ResPartial.cpp; sourceTree = "<group>"; };
 		316F545F20276EC800E2B12C /* ResPartial.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ResPartial.hpp; sourceTree = "<group>"; };
 		316F54622027736000E2B12C /* ResSynth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResSynth.cpp; sourceTree = "<group>"; };
@@ -46,6 +61,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3160BE432051F6CA0024A591 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		317ECA392027261D00B21C82 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -63,13 +85,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3160BE482051F6CA0024A591 /* PartialSynth-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3160BE492051F6CA0024A591 /* PartialSynth_iOS.h */,
+				3160BE4A2051F6CA0024A591 /* Info.plist */,
+			);
+			path = "PartialSynth-iOS";
+			sourceTree = "<group>";
+		};
 		317ECA332027261D00B21C82 = {
 			isa = PBXGroup;
 			children = (
 				317ECA482027262600B21C82 /* src */,
 				317ECA3F2027261D00B21C82 /* PartialSynth */,
-				31A0D3DB202736FF00809B3E /* PartialSynthTests */,
+				3160BE482051F6CA0024A591 /* PartialSynth-iOS */,
 				317ECA3E2027261D00B21C82 /* Products */,
+				31A0D3DB202736FF00809B3E /* PartialSynthTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +110,7 @@
 			children = (
 				317ECA3D2027261D00B21C82 /* PartialSynth.framework */,
 				31A0D3DA202736FF00809B3E /* PartialSynthTests.xctest */,
+				3160BE472051F6CA0024A591 /* PartialSynth_iOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,6 +154,20 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		3160BE442051F6CA0024A591 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3160BE542051F6D80024A591 /* PartialParameter.hpp in Headers */,
+				3160BE562051F6D80024A591 /* SinePartial.hpp in Headers */,
+				3160BE4B2051F6CA0024A591 /* PartialSynth_iOS.h in Headers */,
+				3160BE572051F6D80024A591 /* ResPartial.hpp in Headers */,
+				3160BE582051F6D80024A591 /* SineSynth.hpp in Headers */,
+				3160BE552051F6D80024A591 /* BasePartial.hpp in Headers */,
+				3160BE592051F6D80024A591 /* ResSynth.hpp in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		317ECA3A2027261D00B21C82 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -138,6 +185,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		3160BE462051F6CA0024A591 /* PartialSynth-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3160BE4E2051F6CA0024A591 /* Build configuration list for PBXNativeTarget "PartialSynth-iOS" */;
+			buildPhases = (
+				3160BE422051F6CA0024A591 /* Sources */,
+				3160BE432051F6CA0024A591 /* Frameworks */,
+				3160BE442051F6CA0024A591 /* Headers */,
+				3160BE452051F6CA0024A591 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PartialSynth-iOS";
+			productName = "PartialSynth-iOS";
+			productReference = 3160BE472051F6CA0024A591 /* PartialSynth_iOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		317ECA3C2027261D00B21C82 /* PartialSynth */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 317ECA452027261D00B21C82 /* Build configuration list for PBXNativeTarget "PartialSynth" */;
@@ -182,6 +247,10 @@
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Alex Nadzharov";
 				TargetAttributes = {
+					3160BE462051F6CA0024A591 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
 					317ECA3C2027261D00B21C82 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
@@ -206,11 +275,19 @@
 			targets = (
 				317ECA3C2027261D00B21C82 /* PartialSynth */,
 				31A0D3D9202736FF00809B3E /* PartialSynthTests */,
+				3160BE462051F6CA0024A591 /* PartialSynth-iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3160BE452051F6CA0024A591 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		317ECA3B2027261D00B21C82 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -228,6 +305,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3160BE422051F6CA0024A591 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3160BE502051F6D30024A591 /* SinePartial.cpp in Sources */,
+				3160BE4F2051F6D30024A591 /* BasePartial.cpp in Sources */,
+				3160BE512051F6D30024A591 /* ResPartial.cpp in Sources */,
+				3160BE532051F6D30024A591 /* ResSynth.cpp in Sources */,
+				3160BE522051F6D30024A591 /* SineSynth.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		317ECA382027261D00B21C82 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -254,6 +343,53 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		3160BE4C2051F6CA0024A591 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 85478UQJJR;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "PartialSynth-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alexnadzharov.PartialSynth-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3160BE4D2051F6CA0024A591 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 85478UQJJR;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "PartialSynth-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alexnadzharov.PartialSynth-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		317ECA432027261D00B21C82 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -366,6 +502,7 @@
 		317ECA462027261D00B21C82 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -378,6 +515,7 @@
 				INFOPLIST_FILE = PartialSynth/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexnadzharov.PartialSynth;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -387,6 +525,7 @@
 		317ECA472027261D00B21C82 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -399,6 +538,7 @@
 				INFOPLIST_FILE = PartialSynth/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexnadzharov.PartialSynth;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -434,6 +574,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3160BE4E2051F6CA0024A591 /* Build configuration list for PBXNativeTarget "PartialSynth-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3160BE4C2051F6CA0024A591 /* Debug */,
+				3160BE4D2051F6CA0024A591 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		317ECA372027261D00B21C82 /* Build configuration list for PBXProject "PartialSynth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
