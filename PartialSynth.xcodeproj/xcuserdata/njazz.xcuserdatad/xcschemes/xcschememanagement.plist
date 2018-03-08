@@ -7,17 +7,17 @@
 		<key>PartialSynth-iOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>22</integer>
+			<integer>23</integer>
 		</dict>
 		<key>PartialSynth.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>3</integer>
 		</dict>
 		<key>PartialSynthTests.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>5</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
