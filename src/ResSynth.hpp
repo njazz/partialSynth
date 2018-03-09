@@ -1,3 +1,5 @@
+
+
 //
 //  SineSynth.hpp
 //  PartialSynth
@@ -31,24 +33,38 @@ typedef struct ResPartialData {
     }
     ~ResPartialData()
     {
-                if (freq)
-                    delete[] freq;
-                if (decay)
-                    delete[] decay;
-                if (gain)
-                    delete[] gain;
+        if (freq)
+            delete[] freq;
+        if (decay)
+            delete[] decay;
+        if (gain)
+            delete[] gain;
     }
 
     ResPartialData(ResPartialData& d)
     {
-        freq = new float[d.size];
-        decay = new float[d.size];
-        gain = new float[d.size];
-        size = d.size;
+        if (size != d.size) {
+            freq = new float[d.size];
+            decay = new float[d.size];
+            gain = new float[d.size];
+            size = d.size;
+        }
 
         memcpy(freq, d.freq, size);
         memcpy(decay, d.decay, size);
         memcpy(gain, d.gain, size);
+    }
+
+    void clear()
+    {
+        if (freq)
+            delete[] freq;
+        if (decay)
+            delete[] decay;
+        if (gain)
+            delete[] gain;
+
+        size = 0;
     }
 
 } ResPartialData;
@@ -129,3 +145,4 @@ public:
 };
 
 #endif /* SineSynth_hpp */
+
