@@ -57,12 +57,18 @@ typedef struct ResPartialData {
 
     void clear()
     {
-        if (freq)
+        if (freq) {
             delete[] freq;
-        if (decay)
+            freq = 0;
+        }
+        if (decay) {
             delete[] decay;
-        if (gain)
+            decay = 0;
+        }
+        if (gain) {
             delete[] gain;
+            gain = 0;
+        }
 
         size = 0;
     }
@@ -70,6 +76,8 @@ typedef struct ResPartialData {
 } ResPartialData;
 
 class ResSynth {
+    float _scratchBuffer[8192]; //todo check ranges
+    
     std::vector<ResPartial*> partials;
 
     const std::vector<int> freePartialIndices()
@@ -118,6 +126,26 @@ public:
             partials[idx]->setBusy(true);
         }
     };
+    
+    void setData(ResPartialData* data)
+    {
+        muteActivePartials();
+        
+        std::vector<int> freeIdx = freePartialIndices();
+        
+        int fi = (int)freeIdx.size();
+        int s = (data->size < fi) ? (int)data->size : fi;
+        
+        for (int i = 0; i < s; i++) {
+            int idx = freeIdx[i];
+            if (idx > maxNumberOfPartials)
+                continue;
+            partials[idx]->set<ResPartial::pGain>(data->gain[i]);
+            partials[idx]->set<ResPartial::pDecay>(data->decay[i]);
+            partials[idx]->set<ResPartial::pFreq>(data->freq[i]);
+            partials[idx]->setBusy(true);
+        }
+    };
 
     void muteActivePartials()
     {
@@ -131,18 +159,16 @@ public:
     void process(const float* in_buffer, float* out_buffer, size_t s)
     {
 
-        float* buf = new float[s];
+        //float* buf = new float[s];
         for (int i = 0; i < s; i++) {
-            buf[i] = in_buffer[i];
+            _scratchBuffer[i] = in_buffer[i];
             out_buffer[i] = 0.;
         }
 
         for (ResPartial* sp : activePartials())
-            sp->process(s, buf, out_buffer);
+            sp->process(s, _scratchBuffer, out_buffer);
 
-        delete[] buf;
     };
 };
 
 #endif /* SineSynth_hpp */
-

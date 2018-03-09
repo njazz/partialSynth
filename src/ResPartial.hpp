@@ -65,6 +65,11 @@ public:
             fRec2[i] = 0;
             fRec3[i] = 0;
         }
+        
+        par<pGain>().setSmooth(.9997);
+        par<pFreq>().setSmooth(0);
+        par<pDecay>().setSmooth(0);
+        
     }
 
     void process(size_t s, const float* in_buffer, float* out_buffer)
