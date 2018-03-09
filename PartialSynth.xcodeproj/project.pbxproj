@@ -13,12 +13,12 @@
 		3160BE512051F6D30024A591 /* ResPartial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 316F545E20276EC800E2B12C /* ResPartial.cpp */; };
 		3160BE522051F6D30024A591 /* SineSynth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 317ECA5120272C7D00B21C82 /* SineSynth.cpp */; };
 		3160BE532051F6D30024A591 /* ResSynth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 316F54622027736000E2B12C /* ResSynth.cpp */; };
-		3160BE542051F6D80024A591 /* PartialParameter.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 31FC2561202C6A0900E1B64E /* PartialParameter.hpp */; };
-		3160BE552051F6D80024A591 /* BasePartial.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 317ECA4A2027264800B21C82 /* BasePartial.hpp */; };
-		3160BE562051F6D80024A591 /* SinePartial.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 317ECA4E202726B700B21C82 /* SinePartial.hpp */; };
-		3160BE572051F6D80024A591 /* ResPartial.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 316F545F20276EC800E2B12C /* ResPartial.hpp */; };
-		3160BE582051F6D80024A591 /* SineSynth.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 317ECA5220272C7D00B21C82 /* SineSynth.hpp */; };
-		3160BE592051F6D80024A591 /* ResSynth.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 316F54632027736000E2B12C /* ResSynth.hpp */; };
+		3160BE542051F6D80024A591 /* PartialParameter.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 31FC2561202C6A0900E1B64E /* PartialParameter.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		3160BE552051F6D80024A591 /* BasePartial.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 317ECA4A2027264800B21C82 /* BasePartial.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		3160BE562051F6D80024A591 /* SinePartial.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 317ECA4E202726B700B21C82 /* SinePartial.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		3160BE572051F6D80024A591 /* ResPartial.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 316F545F20276EC800E2B12C /* ResPartial.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		3160BE582051F6D80024A591 /* SineSynth.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 317ECA5220272C7D00B21C82 /* SineSynth.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		3160BE592051F6D80024A591 /* ResSynth.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 316F54632027736000E2B12C /* ResSynth.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		316F546020276EC800E2B12C /* ResPartial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 316F545E20276EC800E2B12C /* ResPartial.cpp */; };
 		316F546120276EC800E2B12C /* ResPartial.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 316F545F20276EC800E2B12C /* ResPartial.hpp */; };
 		316F54642027736000E2B12C /* ResSynth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 316F54622027736000E2B12C /* ResSynth.cpp */; };
@@ -441,7 +441,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
