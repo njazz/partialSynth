@@ -37,6 +37,13 @@ public:
         par<I>().setValue(f);
     };
 
+    template <int I>
+    inline
+    void setSmooth(float f)
+    {
+        par<I>().setSmooth(f);
+    };
+
     bool busy() { return _busy; }
     void setBusy(bool b) { _busy = b; }
     

@@ -26,17 +26,16 @@ private:
     int fSamplingFreq = 44100;
     float fConst0 = (6.2831855f / fmin(1.92e+05f, fmax(1.0f, (float)fSamplingFreq)));
 
-
     inline
     void compute(const float** input, float** output) //int count,
     {
         float input0 = par<pFreq>().value(); //input[0];
         float input1 = par<pDecay>().value(); //input[1];
         float input2 = par<pGain>().value(); //input[2];
-        
+
         const float* input3 = input[0];
         float* output0 = output[0];
-        
+
         {
             float fTemp0 = input1;
             float fTemp1 = (fConst0 * (float)input0);
@@ -59,17 +58,22 @@ private:
 public:
     ResPartial()
     {
-        for (int i = 0; i < 2; i++) {
-            fRec0[i] = 0;
-            fRec1[i] = 0;
-            fRec2[i] = 0;
-            fRec3[i] = 0;
-        }
-        
+        reset();
+
         par<pGain>().setSmooth(.9997);
         par<pFreq>().setSmooth(0);
-        par<pDecay>().setSmooth(0);
-        
+        par<pDecay>().setSmooth(0.98);
+
+        _busy = false;
+    }
+
+    void processParams(size_t s)
+    {
+        while (s--) {
+            par<pFreq>().process();
+            par<pDecay>().process();
+            par<pGain>().process();
+        }
     }
 
     void process(size_t s, const float* in_buffer, float* out_buffer)
@@ -86,10 +90,28 @@ public:
             b_in++;
             b_out++;
 
-            if (par<pGain>().value() < 0.000001)
+
+        }
+        
+        if (par<pGain>().value() < 0.000001)
+            if (gate) {
+                reset();
                 _busy = false;
+                gate = false;
+            }
+    }
+
+    void reset()
+    {
+        for (int i = 0; i < 2; i++) {
+            fRec0[i] = 0;
+            fRec1[i] = 0;
+            fRec2[i] = 0;
+            fRec3[i] = 0;
         }
     }
+
+    bool gate;
 
     static const int pFreq = 0;
     static const int pDecay = 1;

@@ -23,6 +23,8 @@ typedef struct ResPartialData {
     float* decay = 0;
     float* gain = 0;
     size_t size = 0;
+    
+    ResPartialData() = default;
 
     explicit ResPartialData(size_t s)
     {
@@ -54,6 +56,17 @@ typedef struct ResPartialData {
         memcpy(decay, d.decay, size);
         memcpy(gain, d.gain, size);
     }
+//    
+//    ResPartialData& operator=(ResPartialData d)
+//    {
+//        const ResPartialData& ret = ResPartialData(d);
+//        memcpy(freq, d.freq, size);
+//        memcpy(decay, d.decay, size);
+//        memcpy(gain, d.gain, size);
+//        
+//        return ret;
+//    }
+    
 
     void clear()
     {
@@ -77,20 +90,20 @@ typedef struct ResPartialData {
 
 class ResSynth {
     float _scratchBuffer[8192]; //todo check ranges
-    
-    std::vector<ResPartial*> partials;
 
-    const std::vector<int> freePartialIndices()
+    std::vector<ResPartial*> partials;
+    std::vector<int> _freePartialIndices;
+
+    void updateFreePartialIndices()
     {
-        std::vector<int> ret;
+        _freePartialIndices.clear();
         for (int i = 0; i < maxNumberOfPartials; i++) {
-            if (!partials[i]->busy())
-                ret.push_back(i);
+            if (!partials[i]->gate)
+                _freePartialIndices.push_back(i);
         }
-        return ret;
     }
 
-    const std::vector<ResPartial*> activePartials()
+    inline std::vector<ResPartial*> activePartials()
     {
         std::vector<ResPartial*> ret;
         for (int i = 0; i < maxNumberOfPartials; i++) {
@@ -109,41 +122,29 @@ public:
 
     void setData(ResPartialData& data)
     {
-        muteActivePartials();
-
-        std::vector<int> freeIdx = freePartialIndices();
-
-        int fi = (int)freeIdx.size();
-        int s = (data.size < fi) ? (int)data.size : fi;
-
-        for (int i = 0; i < s; i++) {
-            int idx = freeIdx[i];
-            if (idx > maxNumberOfPartials)
-                continue;
-            partials[idx]->set<ResPartial::pGain>(data.gain[i]);
-            partials[idx]->set<ResPartial::pDecay>(data.decay[i]);
-            partials[idx]->set<ResPartial::pFreq>(data.freq[i]);
-            partials[idx]->setBusy(true);
-        }
+        setData(&data);
     };
-    
+
     void setData(ResPartialData* data)
     {
         muteActivePartials();
-        
-        std::vector<int> freeIdx = freePartialIndices();
-        
-        int fi = (int)freeIdx.size();
+
+        updateFreePartialIndices();
+
+        int fi = (int)_freePartialIndices.size();
         int s = (data->size < fi) ? (int)data->size : fi;
-        
+
         for (int i = 0; i < s; i++) {
-            int idx = freeIdx[i];
+            int idx = _freePartialIndices[i];
             if (idx > maxNumberOfPartials)
                 continue;
+
+            partials[idx]->setSmooth<ResPartial::pGain>(0.9997);
             partials[idx]->set<ResPartial::pGain>(data->gain[i]);
             partials[idx]->set<ResPartial::pDecay>(data->decay[i]);
             partials[idx]->set<ResPartial::pFreq>(data->freq[i]);
             partials[idx]->setBusy(true);
+            partials[idx]->gate = true;
         }
     };
 
@@ -151,6 +152,7 @@ public:
     {
         for (int i = 0; i < maxNumberOfPartials; i++) {
             if (partials[i]->busy()) {
+                partials[i]->setSmooth<ResPartial::pGain>(0.9997);
                 partials[i]->set<ResPartial::pGain>(0);
             }
         }
@@ -159,15 +161,18 @@ public:
     void process(const float* in_buffer, float* out_buffer, size_t s)
     {
 
-        //float* buf = new float[s];
         for (int i = 0; i < s; i++) {
             _scratchBuffer[i] = in_buffer[i];
             out_buffer[i] = 0.;
         }
 
-        for (ResPartial* sp : activePartials())
-            sp->process(s, _scratchBuffer, out_buffer);
-
+//        int pc = 0;
+        for (ResPartial* sp : partials) {
+            if (sp->busy()) {
+                sp->process(s, _scratchBuffer, out_buffer);
+//                pc++;
+            }
+        }
     };
 };
 
