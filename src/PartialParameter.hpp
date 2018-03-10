@@ -41,6 +41,8 @@ public:
     
     inline
     float value() { return _previous; }
+    
+    inline float* valuePtr() {return &_previous;}
 
     inline
     void setSmooth(float v)

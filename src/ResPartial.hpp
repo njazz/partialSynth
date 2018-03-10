@@ -16,6 +16,8 @@
 #include "math.h"
 #include "stdlib.h"
 
+#include "SineTables.h"
+
 class ResPartial : public BasePartial {
 
 private:
@@ -25,33 +27,41 @@ private:
     float fRec1[2];
     int fSamplingFreq = 44100;
     float fConst0 = (6.2831855f / fmin(1.92e+05f, fmax(1.0f, (float)fSamplingFreq)));
+    //
+    SineTable _sin;
+    CosTable _cos;
 
-    inline
-    void compute(const float** input, float** output) //int count,
+    float* _freq;
+    float* _decay;
+    volatile float* _gain;
+
+    float _cTemp1 = 0;
+    float _cTemp2 = 0;
+    float _cTemp3 = 0;
+
+    float _dTemp2 = 0;
+    float _dTemp3 = 0;
+
+    inline void compute(const float** input, float** output) //int count,
     {
-        float input0 = par<pFreq>().value(); //input[0];
-        float input1 = par<pDecay>().value(); //input[1];
-        float input2 = par<pGain>().value(); //input[2];
 
         const float* input3 = input[0];
         float* output0 = output[0];
 
         {
-            float fTemp0 = input1;
-            float fTemp1 = (fConst0 * (float)input0);
-            float fTemp2 = sinf(fTemp1);
-            float fTemp3 = cosf(fTemp1);
-            fRec0[0] = (fTemp0 * ((fTemp2 * fRec1[1]) + (fTemp3 * fRec0[1])));
-            fRec2[0] = (fTemp0 * ((fTemp2 * fRec3[1]) + (fTemp3 * fRec2[1])));
-            float fTemp4 = (0 - fTemp2);
-            fRec3[0] = ((fTemp4 * fRec2[1]) + ((float)input3[0] + (fTemp3 * fRec3[1])));
-            fRec1[0] = ((fTemp3 * fRec1[1]) + (fRec3[0] + (fTemp4 * fRec0[1])));
-            output0[0] += (float)((float)input2 * fRec0[0]);
+
+            fRec0[0] = ((_dTemp2 * fRec1[1]) + (_dTemp3 * fRec0[1]));
+            fRec2[0] = ((_dTemp2 * fRec3[1]) + (_dTemp3 * fRec2[1]));
+            fRec3[0] = ((-_cTemp2 * fRec2[1]) + ((float)input3[0] + (_cTemp3 * fRec3[1])));
+            fRec1[0] = ((_cTemp3 * fRec1[1]) + (fRec3[0] + (-_cTemp2 * fRec0[1])));
+
+            output0[0] += (*_gain * fRec0[0]);
+
             // post processing
-            fRec1[1] = fRec1[0];
-            fRec3[1] = fRec3[0];
-            fRec2[1] = fRec2[0];
             fRec0[1] = fRec0[0];
+            fRec1[1] = fRec1[0];
+            fRec2[1] = fRec2[0];
+            fRec3[1] = fRec3[0];
         }
     }
 
@@ -62,9 +72,13 @@ public:
 
         par<pGain>().setSmooth(.9997);
         par<pFreq>().setSmooth(0);
-        par<pDecay>().setSmooth(0.98);
+        par<pDecay>().setSmooth(0.);
 
         _busy = false;
+
+        _freq = par<pFreq>().valuePtr(); //input[0];
+        _decay = par<pDecay>().valuePtr(); //input[1];
+        _gain = par<pGain>().valuePtr(); //input[2];
     }
 
     void processParams(size_t s)
@@ -81,24 +95,31 @@ public:
         const float* b_in = in_buffer;
         float* b_out = out_buffer;
 
-        while (s--) {
-            par<pFreq>().process();
-            par<pDecay>().process();
+        int size = (int)s;
+        while (size--) {
             par<pGain>().process();
 
             compute(&b_in, &b_out);
             b_in++;
             b_out++;
-
-
         }
-        
+
         if (par<pGain>().value() < 0.000001)
             if (gate) {
                 reset();
                 _busy = false;
                 gate = false;
             }
+    }
+
+    void updateFreq()
+    {
+        _cTemp1 = (fConst0 * (float)*_freq); //input0);
+        _cTemp2 = _sin(_cTemp1);
+        _cTemp3 = _cos(_cTemp1);
+
+        _dTemp2 = *_decay * _cTemp2;
+        _dTemp3 = *_decay * _cTemp3;
     }
 
     void reset()

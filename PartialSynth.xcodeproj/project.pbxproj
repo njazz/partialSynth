@@ -19,6 +19,9 @@
 		3160BE572051F6D80024A591 /* ResPartial.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 316F545F20276EC800E2B12C /* ResPartial.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		3160BE582051F6D80024A591 /* SineSynth.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 317ECA5220272C7D00B21C82 /* SineSynth.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		3160BE592051F6D80024A591 /* ResSynth.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 316F54632027736000E2B12C /* ResSynth.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		316320EF205469640099DE3E /* SineTables.h in Headers */ = {isa = PBXBuildFile; fileRef = 316320EE205468210099DE3E /* SineTables.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3163210220547B100099DE3E /* SineTables.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3163210120547B100099DE3E /* SineTables.cpp */; };
+		3163210320547B170099DE3E /* SineTables.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3163210120547B100099DE3E /* SineTables.cpp */; };
 		316F546020276EC800E2B12C /* ResPartial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 316F545E20276EC800E2B12C /* ResPartial.cpp */; };
 		316F546120276EC800E2B12C /* ResPartial.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 316F545F20276EC800E2B12C /* ResPartial.hpp */; };
 		316F54642027736000E2B12C /* ResSynth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 316F54622027736000E2B12C /* ResSynth.cpp */; };
@@ -41,6 +44,8 @@
 		3160BE472051F6CA0024A591 /* PartialSynth_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PartialSynth_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3160BE492051F6CA0024A591 /* PartialSynth_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PartialSynth_iOS.h; sourceTree = "<group>"; };
 		3160BE4A2051F6CA0024A591 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		316320EE205468210099DE3E /* SineTables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SineTables.h; sourceTree = "<group>"; };
+		3163210120547B100099DE3E /* SineTables.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SineTables.cpp; sourceTree = "<group>"; };
 		316F545E20276EC800E2B12C /* ResPartial.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ResPartial.cpp; sourceTree = "<group>"; };
 		316F545F20276EC800E2B12C /* ResPartial.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ResPartial.hpp; sourceTree = "<group>"; };
 		316F54622027736000E2B12C /* ResSynth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResSynth.cpp; sourceTree = "<group>"; };
@@ -127,6 +132,8 @@
 		317ECA482027262600B21C82 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				3163210120547B100099DE3E /* SineTables.cpp */,
+				316320EE205468210099DE3E /* SineTables.h */,
 				31FC2561202C6A0900E1B64E /* PartialParameter.hpp */,
 				317ECA492027264800B21C82 /* BasePartial.cpp */,
 				317ECA4A2027264800B21C82 /* BasePartial.hpp */,
@@ -165,6 +172,7 @@
 				3160BE582051F6D80024A591 /* SineSynth.hpp in Headers */,
 				3160BE552051F6D80024A591 /* BasePartial.hpp in Headers */,
 				3160BE592051F6D80024A591 /* ResSynth.hpp in Headers */,
+				316320EF205469640099DE3E /* SineTables.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3160BE502051F6D30024A591 /* SinePartial.cpp in Sources */,
+				3163210320547B170099DE3E /* SineTables.cpp in Sources */,
 				3160BE4F2051F6D30024A591 /* BasePartial.cpp in Sources */,
 				3160BE512051F6D30024A591 /* ResPartial.cpp in Sources */,
 				3160BE532051F6D30024A591 /* ResSynth.cpp in Sources */,
@@ -322,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				317ECA4F202726B700B21C82 /* SinePartial.cpp in Sources */,
+				3163210220547B100099DE3E /* SineTables.cpp in Sources */,
 				317ECA5320272C7D00B21C82 /* SineSynth.cpp in Sources */,
 				316F546020276EC800E2B12C /* ResPartial.cpp in Sources */,
 				316F54642027736000E2B12C /* ResSynth.cpp in Sources */,

@@ -36,6 +36,13 @@ public:
     {
         par<I>().setValue(f);
     };
+    
+    template <int I>
+    inline
+    float value()
+    {
+        return par<I>().value();
+    };
 
     template <int I>
     inline

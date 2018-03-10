@@ -23,7 +23,7 @@ typedef struct ResPartialData {
     float* decay = 0;
     float* gain = 0;
     size_t size = 0;
-    
+
     ResPartialData() = default;
 
     explicit ResPartialData(size_t s)
@@ -56,17 +56,6 @@ typedef struct ResPartialData {
         memcpy(decay, d.decay, size);
         memcpy(gain, d.gain, size);
     }
-//    
-//    ResPartialData& operator=(ResPartialData d)
-//    {
-//        const ResPartialData& ret = ResPartialData(d);
-//        memcpy(freq, d.freq, size);
-//        memcpy(decay, d.decay, size);
-//        memcpy(gain, d.gain, size);
-//        
-//        return ret;
-//    }
-    
 
     void clear()
     {
@@ -113,6 +102,13 @@ class ResSynth {
         return ret;
     }
 
+    // moved from partial
+    float fSamplingFreq = 44100; //ok
+    float fConst0 = (6.2831855f / fmin(1.92e+05f, fmax(1.0f, (float)fSamplingFreq)));
+
+    float _sharedBuffer[8192];
+    float _sharedBufferLastSample = 0;
+
 public:
     ResSynth()
     {
@@ -143,10 +139,34 @@ public:
             partials[idx]->set<ResPartial::pGain>(data->gain[i]);
             partials[idx]->set<ResPartial::pDecay>(data->decay[i]);
             partials[idx]->set<ResPartial::pFreq>(data->freq[i]);
+            partials[idx]->updateFreq();
             partials[idx]->setBusy(true);
             partials[idx]->gate = true;
         }
     };
+
+    ///> to be used when the updated frames have the same frequencies
+    void setIndexedData(ResPartialData* data)
+    {
+        int s = (data->size < 1024) ? (int)data->size : 1024;
+
+        for (int i = 0; i < s; i++) {
+            if (partials[i]->value<ResPartial::pFreq>() == data->freq[i])
+                if (partials[i]->value<ResPartial::pGain>() == data->gain[i])
+                    continue;
+
+            partials[i]->setSmooth<ResPartial::pGain>(0.9997);
+            partials[i]->set<ResPartial::pGain>(data->gain[i]);
+            partials[i]->set<ResPartial::pDecay>(data->decay[i]);
+            partials[i]->set<ResPartial::pFreq>(data->freq[i]);
+            partials[i]->updateFreq();
+            partials[i]->setBusy(true);
+            partials[i]->gate = true;
+        }
+        for (int i = s; i < 1024; i++) {
+            partials[i]->gate = false;
+        }
+    }
 
     void muteActivePartials()
     {
@@ -166,11 +186,13 @@ public:
             out_buffer[i] = 0.;
         }
 
-//        int pc = 0;
+        _sharedBuffer[0] = _sharedBufferLastSample;
+        for (int i = 0; i < s; i++)
+            _sharedBuffer[i] = fConst0 * _scratchBuffer[i];
+
         for (ResPartial* sp : partials) {
             if (sp->busy()) {
                 sp->process(s, _scratchBuffer, out_buffer);
-//                pc++;
             }
         }
     };

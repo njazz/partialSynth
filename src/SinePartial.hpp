@@ -55,3 +55,4 @@ public:
 };
 
 #endif /* SinePartial_hpp */
+
