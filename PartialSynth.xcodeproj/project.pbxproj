@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3136E7ED2057257600A86222 /* SineTables.h in Headers */ = {isa = PBXBuildFile; fileRef = 316320EE205468210099DE3E /* SineTables.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3160BE4B2051F6CA0024A591 /* PartialSynth_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 3160BE492051F6CA0024A591 /* PartialSynth_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3160BE4F2051F6D30024A591 /* BasePartial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 317ECA492027264800B21C82 /* BasePartial.cpp */; };
 		3160BE502051F6D30024A591 /* SinePartial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 317ECA4D202726B700B21C82 /* SinePartial.cpp */; };
@@ -23,21 +24,21 @@
 		3163210220547B100099DE3E /* SineTables.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3163210120547B100099DE3E /* SineTables.cpp */; };
 		3163210320547B170099DE3E /* SineTables.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3163210120547B100099DE3E /* SineTables.cpp */; };
 		316F546020276EC800E2B12C /* ResPartial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 316F545E20276EC800E2B12C /* ResPartial.cpp */; };
-		316F546120276EC800E2B12C /* ResPartial.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 316F545F20276EC800E2B12C /* ResPartial.hpp */; };
+		316F546120276EC800E2B12C /* ResPartial.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 316F545F20276EC800E2B12C /* ResPartial.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		316F54642027736000E2B12C /* ResSynth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 316F54622027736000E2B12C /* ResSynth.cpp */; };
-		316F54652027736000E2B12C /* ResSynth.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 316F54632027736000E2B12C /* ResSynth.hpp */; };
+		316F54652027736000E2B12C /* ResSynth.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 316F54632027736000E2B12C /* ResSynth.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		317ECA422027261D00B21C82 /* PartialSynth.h in Headers */ = {isa = PBXBuildFile; fileRef = 317ECA402027261D00B21C82 /* PartialSynth.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		317ECA4B2027264800B21C82 /* BasePartial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 317ECA492027264800B21C82 /* BasePartial.cpp */; };
-		317ECA4C2027264800B21C82 /* BasePartial.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 317ECA4A2027264800B21C82 /* BasePartial.hpp */; };
+		317ECA4C2027264800B21C82 /* BasePartial.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 317ECA4A2027264800B21C82 /* BasePartial.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		317ECA4F202726B700B21C82 /* SinePartial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 317ECA4D202726B700B21C82 /* SinePartial.cpp */; };
-		317ECA50202726B700B21C82 /* SinePartial.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 317ECA4E202726B700B21C82 /* SinePartial.hpp */; };
+		317ECA50202726B700B21C82 /* SinePartial.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 317ECA4E202726B700B21C82 /* SinePartial.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		317ECA5320272C7D00B21C82 /* SineSynth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 317ECA5120272C7D00B21C82 /* SineSynth.cpp */; };
-		317ECA5420272C7D00B21C82 /* SineSynth.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 317ECA5220272C7D00B21C82 /* SineSynth.hpp */; };
+		317ECA5420272C7D00B21C82 /* SineSynth.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 317ECA5220272C7D00B21C82 /* SineSynth.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		31A0D3DD202736FF00809B3E /* PartialSynthTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 31A0D3DC202736FF00809B3E /* PartialSynthTests.mm */; };
 		31A0D3E22027377900809B3E /* BasePartial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 317ECA492027264800B21C82 /* BasePartial.cpp */; };
 		31A0D3E32027377900809B3E /* SinePartial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 317ECA4D202726B700B21C82 /* SinePartial.cpp */; };
 		31A0D3E42027377900809B3E /* SineSynth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 317ECA5120272C7D00B21C82 /* SineSynth.cpp */; };
-		31FC2563202C6A0900E1B64E /* PartialParameter.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 31FC2561202C6A0900E1B64E /* PartialParameter.hpp */; };
+		31FC2563202C6A0900E1B64E /* PartialParameter.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 31FC2561202C6A0900E1B64E /* PartialParameter.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +51,7 @@
 		316F545F20276EC800E2B12C /* ResPartial.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ResPartial.hpp; sourceTree = "<group>"; };
 		316F54622027736000E2B12C /* ResSynth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResSynth.cpp; sourceTree = "<group>"; };
 		316F54632027736000E2B12C /* ResSynth.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ResSynth.hpp; sourceTree = "<group>"; };
-		317ECA3D2027261D00B21C82 /* PartialSynth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PartialSynth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		317ECA3D2027261D00B21C82 /* PartialSynth_OSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PartialSynth_OSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		317ECA402027261D00B21C82 /* PartialSynth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PartialSynth.h; sourceTree = "<group>"; };
 		317ECA412027261D00B21C82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		317ECA492027264800B21C82 /* BasePartial.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BasePartial.cpp; sourceTree = "<group>"; };
@@ -113,7 +114,7 @@
 		317ECA3E2027261D00B21C82 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				317ECA3D2027261D00B21C82 /* PartialSynth.framework */,
+				317ECA3D2027261D00B21C82 /* PartialSynth_OSX.framework */,
 				31A0D3DA202736FF00809B3E /* PartialSynthTests.xctest */,
 				3160BE472051F6CA0024A591 /* PartialSynth_iOS.framework */,
 			);
@@ -186,6 +187,7 @@
 				317ECA4C2027264800B21C82 /* BasePartial.hpp in Headers */,
 				316F546120276EC800E2B12C /* ResPartial.hpp in Headers */,
 				317ECA50202726B700B21C82 /* SinePartial.hpp in Headers */,
+				3136E7ED2057257600A86222 /* SineTables.h in Headers */,
 				31FC2563202C6A0900E1B64E /* PartialParameter.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,9 +213,9 @@
 			productReference = 3160BE472051F6CA0024A591 /* PartialSynth_iOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		317ECA3C2027261D00B21C82 /* PartialSynth */ = {
+		317ECA3C2027261D00B21C82 /* PartialSynth-OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 317ECA452027261D00B21C82 /* Build configuration list for PBXNativeTarget "PartialSynth" */;
+			buildConfigurationList = 317ECA452027261D00B21C82 /* Build configuration list for PBXNativeTarget "PartialSynth-OSX" */;
 			buildPhases = (
 				317ECA382027261D00B21C82 /* Sources */,
 				317ECA392027261D00B21C82 /* Frameworks */,
@@ -224,9 +226,9 @@
 			);
 			dependencies = (
 			);
-			name = PartialSynth;
+			name = "PartialSynth-OSX";
 			productName = PartialSynth;
-			productReference = 317ECA3D2027261D00B21C82 /* PartialSynth.framework */;
+			productReference = 317ECA3D2027261D00B21C82 /* PartialSynth_OSX.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		31A0D3D9202736FF00809B3E /* PartialSynthTests */ = {
@@ -281,9 +283,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				317ECA3C2027261D00B21C82 /* PartialSynth */,
 				31A0D3D9202736FF00809B3E /* PartialSynthTests */,
 				3160BE462051F6CA0024A591 /* PartialSynth-iOS */,
+				317ECA3C2027261D00B21C82 /* PartialSynth-OSX */,
 			);
 		};
 /* End PBXProject section */
@@ -524,6 +526,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
+				GCC_OPTIMIZATION_LEVEL = s;
 				INFOPLIST_FILE = PartialSynth/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
@@ -604,7 +607,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		317ECA452027261D00B21C82 /* Build configuration list for PBXNativeTarget "PartialSynth" */ = {
+		317ECA452027261D00B21C82 /* Build configuration list for PBXNativeTarget "PartialSynth-OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				317ECA462027261D00B21C82 /* Debug */,

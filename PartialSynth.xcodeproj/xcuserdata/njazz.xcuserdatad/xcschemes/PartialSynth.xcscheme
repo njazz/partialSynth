@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "317ECA3C2027261D00B21C82"
-               BuildableName = "PartialSynth.framework"
-               BlueprintName = "PartialSynth"
+               BuildableName = "PartialSynth_OSX.framework"
+               BlueprintName = "PartialSynth-OSX"
                ReferencedContainer = "container:PartialSynth.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "317ECA3C2027261D00B21C82"
-            BuildableName = "PartialSynth.framework"
-            BlueprintName = "PartialSynth"
+            BuildableName = "PartialSynth_OSX.framework"
+            BlueprintName = "PartialSynth-OSX"
             ReferencedContainer = "container:PartialSynth.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -68,8 +68,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "317ECA3C2027261D00B21C82"
-            BuildableName = "PartialSynth.framework"
-            BlueprintName = "PartialSynth"
+            BuildableName = "PartialSynth_OSX.framework"
+            BlueprintName = "PartialSynth-OSX"
             ReferencedContainer = "container:PartialSynth.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -86,8 +86,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "317ECA3C2027261D00B21C82"
-            BuildableName = "PartialSynth.framework"
-            BlueprintName = "PartialSynth"
+            BuildableName = "PartialSynth_OSX.framework"
+            BlueprintName = "PartialSynth-OSX"
             ReferencedContainer = "container:PartialSynth.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
