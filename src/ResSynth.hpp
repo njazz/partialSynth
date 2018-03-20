@@ -24,6 +24,7 @@ typedef struct ResPartialData {
     float* gain = 0;
     size_t size = 0;
 
+    
     ResPartialData() = default;
 
     explicit ResPartialData(size_t s)
@@ -78,6 +79,8 @@ typedef struct ResPartialData {
 } ResPartialData;
 
 class ResSynth {
+    
+    
     float _scratchBuffer[8192]; //todo check ranges
 
     std::vector<ResPartial*> partials;
@@ -120,7 +123,9 @@ public:
     {
         setData(&data);
     };
-
+    
+    float gainSmooth = 0.9997;
+    
     void setData(ResPartialData* data)
     {
         muteActivePartials();
@@ -135,7 +140,7 @@ public:
             if (idx > maxNumberOfPartials)
                 continue;
 
-            partials[idx]->setSmooth<ResPartial::pGain>(0.9997);
+            partials[idx]->setSmooth<ResPartial::pGain>(gainSmooth);
             partials[idx]->set<ResPartial::pGain>(data->gain[i]);
             partials[idx]->set<ResPartial::pDecay>(data->decay[i]);
             partials[idx]->set<ResPartial::pFreq>(data->freq[i]);
@@ -155,7 +160,7 @@ public:
                 if (partials[i]->value<ResPartial::pGain>() == data->gain[i])
                     continue;
 
-            partials[i]->setSmooth<ResPartial::pGain>(0.9997);
+            partials[i]->setSmooth<ResPartial::pGain>(gainSmooth);
             partials[i]->set<ResPartial::pGain>(data->gain[i]);
             partials[i]->set<ResPartial::pDecay>(data->decay[i]);
             partials[i]->set<ResPartial::pFreq>(data->freq[i]);
@@ -172,7 +177,7 @@ public:
     {
         for (int i = 0; i < maxNumberOfPartials; i++) {
             if (partials[i]->busy()) {
-                partials[i]->setSmooth<ResPartial::pGain>(0.9997);
+                partials[i]->setSmooth<ResPartial::pGain>(gainSmooth);
                 partials[i]->set<ResPartial::pGain>(0);
             }
         }
