@@ -125,6 +125,7 @@ public:
     };
     
     float gainSmooth = 0.9997;
+    float freqSmooth = 0;
     
     void setData(ResPartialData* data)
     {
@@ -141,6 +142,7 @@ public:
                 continue;
 
             partials[idx]->setSmooth<ResPartial::pGain>(gainSmooth);
+            partials[idx]->setSmooth<ResPartial::pFreq>(0);
             partials[idx]->set<ResPartial::pGain>(data->gain[i]);
             partials[idx]->set<ResPartial::pDecay>(data->decay[i]);
             partials[idx]->set<ResPartial::pFreq>(data->freq[i]);
@@ -161,6 +163,7 @@ public:
                     continue;
 
             partials[i]->setSmooth<ResPartial::pGain>(gainSmooth);
+            partials[i]->setSmooth<ResPartial::pFreq>(freqSmooth);
             partials[i]->set<ResPartial::pGain>(data->gain[i]);
             partials[i]->set<ResPartial::pDecay>(data->decay[i]);
             partials[i]->set<ResPartial::pFreq>(data->freq[i]);
@@ -178,7 +181,7 @@ public:
         for (int i = 0; i < maxNumberOfPartials; i++) {
             if (partials[i]->busy()) {
                 partials[i]->setSmooth<ResPartial::pGain>(gainSmooth);
-                partials[i]->set<ResPartial::pGain>(0);
+                partials[i]->set<ResPartial::pGain>(freqSmooth);
             }
         }
     }

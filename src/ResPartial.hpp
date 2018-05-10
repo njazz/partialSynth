@@ -52,8 +52,8 @@ private:
 
             fRec0[0] = ((_dTemp2 * fRec1[1]) + (_dTemp3 * fRec0[1]));
             fRec2[0] = ((_dTemp2 * fRec3[1]) + (_dTemp3 * fRec2[1]));
-            fRec3[0] = ((-_cTemp2 * fRec2[1]) + ((float)input3[0] + (_cTemp3 * fRec3[1])));
-            fRec1[0] = ((_cTemp3 * fRec1[1]) + (fRec3[0] + (-_cTemp2 * fRec0[1])));
+            fRec3[0] = ((_cTemp2 * fRec2[1]) + ((float)input3[0] + (_cTemp3 * fRec3[1])));
+            fRec1[0] = ((_cTemp3 * fRec1[1]) + (fRec3[0] + (_cTemp2 * fRec0[1])));
 
             output0[0] += (*_gain * fRec0[0]);
 
@@ -115,10 +115,13 @@ public:
     void updateFreq()
     {
         _cTemp1 = (fConst0 * (float)*_freq); //input0);
-        _cTemp2 = _sin(_cTemp1);
+        
+        float s = _sin(_cTemp1);
+        
+        _cTemp2 = -s;
         _cTemp3 = _cos(_cTemp1);
 
-        _dTemp2 = *_decay * _cTemp2;
+        _dTemp2 = *_decay * s;
         _dTemp3 = *_decay * _cTemp3;
     }
 
