@@ -13,6 +13,7 @@ SineSynth::SineSynth()
     for (int i = 0; i < maxNumberOfPartials; i++)
         partials.push_back(new SinePartial);
 }
+
 void SineSynth::setData(SinePartialData& data)
 {
     muteActivePartials();

@@ -38,8 +38,36 @@
 		31A0D3E22027377900809B3E /* BasePartial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 317ECA492027264800B21C82 /* BasePartial.cpp */; };
 		31A0D3E32027377900809B3E /* SinePartial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 317ECA4D202726B700B21C82 /* SinePartial.cpp */; };
 		31A0D3E42027377900809B3E /* SineSynth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 317ECA5120272C7D00B21C82 /* SineSynth.cpp */; };
+		31F2CB8422B2EE50009B1631 /* PartialSynth_iOS_static.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F2CB8322B2EE50009B1631 /* PartialSynth_iOS_static.m */; };
+		31F2CB8522B2EE50009B1631 /* PartialSynth_iOS_static.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 31F2CB8222B2EE50009B1631 /* PartialSynth_iOS_static.h */; };
+		31F2CB8A22B2EE85009B1631 /* SineTables.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3163210120547B100099DE3E /* SineTables.cpp */; };
+		31F2CB8B22B2EE85009B1631 /* SineTables.h in Headers */ = {isa = PBXBuildFile; fileRef = 316320EE205468210099DE3E /* SineTables.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		31F2CB8C22B2EE85009B1631 /* PartialParameter.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 31FC2561202C6A0900E1B64E /* PartialParameter.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		31F2CB8D22B2EE85009B1631 /* BasePartial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 317ECA492027264800B21C82 /* BasePartial.cpp */; };
+		31F2CB8E22B2EE85009B1631 /* BasePartial.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 317ECA4A2027264800B21C82 /* BasePartial.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		31F2CB8F22B2EE85009B1631 /* SinePartial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 317ECA4D202726B700B21C82 /* SinePartial.cpp */; };
+		31F2CB9022B2EE85009B1631 /* SinePartial.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 317ECA4E202726B700B21C82 /* SinePartial.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		31F2CB9122B2EE85009B1631 /* ResPartial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 316F545E20276EC800E2B12C /* ResPartial.cpp */; };
+		31F2CB9222B2EE85009B1631 /* ResPartial.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 316F545F20276EC800E2B12C /* ResPartial.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		31F2CB9322B2EE85009B1631 /* SineSynth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 317ECA5120272C7D00B21C82 /* SineSynth.cpp */; };
+		31F2CB9422B2EE85009B1631 /* SineSynth.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 317ECA5220272C7D00B21C82 /* SineSynth.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		31F2CB9522B2EE85009B1631 /* ResSynth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 316F54622027736000E2B12C /* ResSynth.cpp */; };
+		31F2CB9622B2EE85009B1631 /* ResSynth.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 316F54632027736000E2B12C /* ResSynth.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 		31FC2563202C6A0900E1B64E /* PartialParameter.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 31FC2561202C6A0900E1B64E /* PartialParameter.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		31F2CB7E22B2EE50009B1631 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				31F2CB8522B2EE50009B1631 /* PartialSynth_iOS_static.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3160BE472051F6CA0024A591 /* PartialSynth_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PartialSynth_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +91,9 @@
 		31A0D3DA202736FF00809B3E /* PartialSynthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PartialSynthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A0D3DC202736FF00809B3E /* PartialSynthTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PartialSynthTests.mm; sourceTree = "<group>"; };
 		31A0D3DE202736FF00809B3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31F2CB8022B2EE50009B1631 /* libPartialSynth-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPartialSynth-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		31F2CB8222B2EE50009B1631 /* PartialSynth_iOS_static.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PartialSynth_iOS_static.h; sourceTree = "<group>"; };
+		31F2CB8322B2EE50009B1631 /* PartialSynth_iOS_static.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PartialSynth_iOS_static.m; sourceTree = "<group>"; };
 		31FC2561202C6A0900E1B64E /* PartialParameter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PartialParameter.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +119,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		31F2CB7D22B2EE50009B1631 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -106,6 +144,7 @@
 				317ECA482027262600B21C82 /* src */,
 				317ECA3F2027261D00B21C82 /* PartialSynth */,
 				3160BE482051F6CA0024A591 /* PartialSynth-iOS */,
+				31F2CB8122B2EE50009B1631 /* PartialSynth-iOS-static */,
 				317ECA3E2027261D00B21C82 /* Products */,
 				31A0D3DB202736FF00809B3E /* PartialSynthTests */,
 			);
@@ -117,6 +156,7 @@
 				317ECA3D2027261D00B21C82 /* PartialSynth_OSX.framework */,
 				31A0D3DA202736FF00809B3E /* PartialSynthTests.xctest */,
 				3160BE472051F6CA0024A591 /* PartialSynth_iOS.framework */,
+				31F2CB8022B2EE50009B1631 /* libPartialSynth-iOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,6 +199,15 @@
 			path = PartialSynthTests;
 			sourceTree = "<group>";
 		};
+		31F2CB8122B2EE50009B1631 /* PartialSynth-iOS-static */ = {
+			isa = PBXGroup;
+			children = (
+				31F2CB8222B2EE50009B1631 /* PartialSynth_iOS_static.h */,
+				31F2CB8322B2EE50009B1631 /* PartialSynth_iOS_static.m */,
+			);
+			path = "PartialSynth-iOS-static";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -189,6 +238,20 @@
 				317ECA50202726B700B21C82 /* SinePartial.hpp in Headers */,
 				3136E7ED2057257600A86222 /* SineTables.h in Headers */,
 				31FC2563202C6A0900E1B64E /* PartialParameter.hpp in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		31F2CB8922B2EE81009B1631 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31F2CB8C22B2EE85009B1631 /* PartialParameter.hpp in Headers */,
+				31F2CB9022B2EE85009B1631 /* SinePartial.hpp in Headers */,
+				31F2CB8B22B2EE85009B1631 /* SineTables.h in Headers */,
+				31F2CB9222B2EE85009B1631 /* ResPartial.hpp in Headers */,
+				31F2CB9422B2EE85009B1631 /* SineSynth.hpp in Headers */,
+				31F2CB8E22B2EE85009B1631 /* BasePartial.hpp in Headers */,
+				31F2CB9622B2EE85009B1631 /* ResSynth.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +311,24 @@
 			productReference = 31A0D3DA202736FF00809B3E /* PartialSynthTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		31F2CB7F22B2EE50009B1631 /* PartialSynth-iOS-static */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31F2CB8822B2EE50009B1631 /* Build configuration list for PBXNativeTarget "PartialSynth-iOS-static" */;
+			buildPhases = (
+				31F2CB7C22B2EE50009B1631 /* Sources */,
+				31F2CB7D22B2EE50009B1631 /* Frameworks */,
+				31F2CB7E22B2EE50009B1631 /* CopyFiles */,
+				31F2CB8922B2EE81009B1631 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PartialSynth-iOS-static";
+			productName = "PartialSynth-iOS-static";
+			productReference = 31F2CB8022B2EE50009B1631 /* libPartialSynth-iOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -269,6 +350,10 @@
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 					};
+					31F2CB7F22B2EE50009B1631 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 317ECA372027261D00B21C82 /* Build configuration list for PBXProject "PartialSynth" */;
@@ -286,6 +371,7 @@
 				31A0D3D9202736FF00809B3E /* PartialSynthTests */,
 				3160BE462051F6CA0024A591 /* PartialSynth-iOS */,
 				317ECA3C2027261D00B21C82 /* PartialSynth-OSX */,
+				31F2CB7F22B2EE50009B1631 /* PartialSynth-iOS-static */,
 			);
 		};
 /* End PBXProject section */
@@ -349,6 +435,20 @@
 				31A0D3DD202736FF00809B3E /* PartialSynthTests.mm in Sources */,
 				31A0D3E32027377900809B3E /* SinePartial.cpp in Sources */,
 				31A0D3E42027377900809B3E /* SineSynth.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		31F2CB7C22B2EE50009B1631 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31F2CB8F22B2EE85009B1631 /* SinePartial.cpp in Sources */,
+				31F2CB9522B2EE85009B1631 /* ResSynth.cpp in Sources */,
+				31F2CB9322B2EE85009B1631 /* SineSynth.cpp in Sources */,
+				31F2CB8422B2EE50009B1631 /* PartialSynth_iOS_static.m in Sources */,
+				31F2CB8A22B2EE85009B1631 /* SineTables.cpp in Sources */,
+				31F2CB9122B2EE85009B1631 /* ResPartial.cpp in Sources */,
+				31F2CB8D22B2EE85009B1631 /* BasePartial.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +686,40 @@
 			};
 			name = Release;
 		};
+		31F2CB8622B2EE50009B1631 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 85478UQJJR;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "PartialSynth-iOS";
+				PUBLIC_HEADERS_FOLDER_PATH = PartialSynth;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		31F2CB8722B2EE50009B1631 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 85478UQJJR;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "PartialSynth-iOS";
+				PUBLIC_HEADERS_FOLDER_PATH = PartialSynth;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -621,6 +755,15 @@
 			buildConfigurations = (
 				31A0D3DF202736FF00809B3E /* Debug */,
 				31A0D3E0202736FF00809B3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		31F2CB8822B2EE50009B1631 /* Build configuration list for PBXNativeTarget "PartialSynth-iOS-static" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31F2CB8622B2EE50009B1631 /* Debug */,
+				31F2CB8722B2EE50009B1631 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
